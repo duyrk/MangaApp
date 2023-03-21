@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -24,6 +24,9 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import AppButton from './Source/Components/AppButton';
+import AppInputField from './Source/Components/AppInputField';
+import { AppColors } from './Source/Constants/AppColors';
 import { Typographies } from './Source/Constants/Typographies';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
@@ -60,7 +63,7 @@ const App  = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
+  const [handleInput, sethandleInput] = useState('')
   return (
     <SafeAreaView style={backgroundStyle}>
      <Text style={Typographies.h1}>H1</Text>
@@ -69,6 +72,11 @@ const App  = () => {
      <Text style={Typographies.h4}>H1</Text>
      <Text style={Typographies.h5}>H1</Text>
      <Text style={Typographies.h6}>H1</Text>
+     <AppButton value="Normal" type='normal' onPress={()=>{console.log(handleInput)}} ></AppButton>
+     <AppButton value="Active" type='active' onPress={()=>{console.log('alo')}} ></AppButton>
+     <AppButton value="Disabled" type='disabled' onPress={()=>{console.log('alo')}} ></AppButton>
+    <AppInputField type='text' value='alo' onChangeText={sethandleInput} inputColor={AppColors.secondary_gray}></AppInputField>
+    <AppInputField type='password' value='alo' onChangeText={sethandleInput} inputColor={AppColors.secondary_gray}></AppInputField>
     </SafeAreaView>
   );
 };
