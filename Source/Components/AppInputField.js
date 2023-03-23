@@ -4,7 +4,7 @@ import { Typographies } from '../Constants/Typographies'
 import FastImage from 'react-native-fast-image'
 const Type = ['text', 'password']
 const AppInputField = (props) => {
-    const { type, inputColor, value, placeholder, onChangeText = (text) => { } } = props
+    const { type, inputColor, value, placeHolder, onChangeText = (text) => { } } = props
     const [inputType, setinputType] = useState('')
     const [inputState, setinputState] = useState(value)
     const [isPassword, setisPassword] = useState(true)
@@ -37,11 +37,11 @@ const AppInputField = (props) => {
     return (
         <View>
             {inputType === Type[0] &&
-                <TextInput placeholder={placeholder} placeholderTextColor={inputColor} style={[styles.inputField, Typographies.h4, { borderBottomColor: inputColor, color: inputColor }]} onChangeText={handleOnChangeText} value={inputState}></TextInput>
+                <TextInput placeholder={placeHolder} placeholderTextColor={inputColor} style={[styles.inputField, Typographies.h4, { borderBottomColor: inputColor, color: inputColor }]} onChangeText={handleOnChangeText} value={inputState}></TextInput>
             }
             {inputType === Type[1] &&
                 <View style={[{ flexDirection: 'row', alignItems: 'center', borderBottomColor: inputColor, color: inputColor, paddingEnd: 22 }, styles.inputField]}>
-                    <TextInput secureTextEntry={isPassword} placeholder={placeholder} placeholderTextColor={inputColor} style={[styles.inputFieldPass, Typographies.h4,{color:inputColor}]} onChangeText={handleOnChangeText} value={inputState}></TextInput>
+                    <TextInput secureTextEntry={isPassword} placeholder={placeHolder} placeholderTextColor={inputColor} style={[styles.inputFieldPass, Typographies.h4,{color:inputColor}]} onChangeText={handleOnChangeText} value={inputState}></TextInput>
                     <Pressable onPress={handlePassword}>
                         <FastImage source={ isPassword ? require('../Images/ic_eye_slash.png') : require('../Images/ic_eye.png')}
                             style={{ width: 25, height: 25 }}

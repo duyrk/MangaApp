@@ -26,8 +26,11 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import AppButton from './Source/Components/AppButton';
 import AppInputField from './Source/Components/AppInputField';
+import ComponentTest from './Source/ComponentTest';
 import { AppColors } from './Source/Constants/AppColors';
 import { Typographies } from './Source/Constants/Typographies';
+import SignIn from './Source/Pages/LoginPages/SignIn';
+import SignUp from './Source/Pages/LoginPages/SignUp';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -62,22 +65,20 @@ const App  = () => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex:1
   };
-  const [handleInput, sethandleInput] = useState('')
+  
   return (
-    <SafeAreaView style={backgroundStyle}>
-     <Text style={Typographies.h1}>H1</Text>
-     <Text style={Typographies.h2}>H1</Text>
-     <Text style={Typographies.h3}>H1</Text>
-     <Text style={Typographies.h4}>H1</Text>
-     <Text style={Typographies.h5}>H1</Text>
-     <Text style={Typographies.h6}>H1</Text>
-     <AppButton value="Normal" type='normal' onPress={()=>{console.log(handleInput)}} ></AppButton>
-     <AppButton value="Active" type='active' onPress={()=>{console.log('alo')}} ></AppButton>
-     <AppButton value="Disabled" type='disabled' onPress={()=>{console.log('alo')}} ></AppButton>
-    <AppInputField type='text' value='alo' onChangeText={sethandleInput} inputColor={AppColors.secondary_gray}></AppInputField>
-    <AppInputField type='password' value='alo' onChangeText={sethandleInput} inputColor={AppColors.secondary_gray}></AppInputField>
-    </SafeAreaView>
+    <View style={backgroundStyle}>
+      {/* <ComponentTest></ComponentTest> */}
+      {/* <SignIn></SignIn> */}
+      <SignUp></SignUp>
+      {/* <View style={{flex:1}}>
+        <View style={{backgroundColor:'red', flex:3}}></View>
+        <View style={{backgroundColor:'pink', flex:2}}></View>
+      </View> */}
+    <StatusBar  barStyle={'dark-content'} backgroundColor={"#FFF"}></StatusBar>
+    </View>
   );
 };
 
