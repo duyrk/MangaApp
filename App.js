@@ -29,6 +29,10 @@ import AppInputField from './Source/Components/AppInputField';
 import ComponentTest from './Source/ComponentTest';
 import { AppColors } from './Source/Constants/AppColors';
 import { Typographies } from './Source/Constants/Typographies';
+import HomeScreen from './Source/Pages/HomePages/HomeScreen';
+import ChooseGenre from './Source/Pages/LoginPages/ChooseGenre';
+import SetupProfile from './Source/Pages/LoginPages/SetupProfile';
+//import GenreItem from './Source/Pages/LoginPages/Items/GenreItem';
 import SignIn from './Source/Pages/LoginPages/SignIn';
 import SignUp from './Source/Pages/LoginPages/SignUp';
 
@@ -72,7 +76,11 @@ const App  = () => {
     <View style={backgroundStyle}>
       {/* <ComponentTest></ComponentTest> */}
       {/* <SignIn></SignIn> */}
-      <SignUp></SignUp>
+      {/* <SignUp></SignUp> */}
+      {/* <GenreItem></GenreItem> */}
+      {/* <ChooseGenre></ChooseGenre> */}
+      {/* <SetupProfile></SetupProfile> */}
+      <HomeScreen></HomeScreen>
       {/* <View style={{flex:1}}>
         <View style={{backgroundColor:'red', flex:3}}></View>
         <View style={{backgroundColor:'pink', flex:2}}></View>

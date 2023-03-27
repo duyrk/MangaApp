@@ -7,10 +7,12 @@ import DropShadow from 'react-native-drop-shadow'
 import LinearGradient from 'react-native-linear-gradient'
 import AppButton from '../../Components/AppButton'
 import AppInputField from '../../Components/AppInputField'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 const SignUp = () => {
     const windowWidth = Dimensions.get('window').width;
     const windowHeight = Dimensions.get('window').height;
     return (
+ 
         <View style={[styles.container]}>
             <View style={styles.socialContainer}>
                 <View style={styles.welcomeContainter}>
@@ -88,6 +90,7 @@ const SignUp = () => {
                 </LinearGradient>
             </View>
         </View>
+      
 
     )
 }
