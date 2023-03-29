@@ -19,17 +19,17 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+
 } from 'react-native/Libraries/NewAppScreen';
 import AppButton from './Source/Components/AppButton';
 import AppInputField from './Source/Components/AppInputField';
+import AppToolbar from './Source/Components/AppToolbar';
 import ComponentTest from './Source/ComponentTest';
 import { AppColors } from './Source/Constants/AppColors';
 import { Typographies } from './Source/Constants/Typographies';
-import HomeScreen from './Source/Pages/HomePages/HomeScreen';
+import{HomeScreen} from './Source/Pages/HomePages/Home';
+import BannerItem from './Source/Pages/HomePages/Items/BannerItem';
+// import HomeScreen from './Source/Pages/HomePages/HomeScreen';
 import ChooseGenre from './Source/Pages/LoginPages/ChooseGenre';
 import SetupProfile from './Source/Pages/LoginPages/SetupProfile';
 //import GenreItem from './Source/Pages/LoginPages/Items/GenreItem';
@@ -80,7 +80,9 @@ const App  = () => {
       {/* <GenreItem></GenreItem> */}
       {/* <ChooseGenre></ChooseGenre> */}
       {/* <SetupProfile></SetupProfile> */}
-      <HomeScreen></HomeScreen>
+      {/* <HomeScreen></HomeScreen> */}
+      <AppToolbar></AppToolbar>
+      {/* <BannerItem></BannerItem> */}
       {/* <View style={{flex:1}}>
         <View style={{backgroundColor:'red', flex:3}}></View>
         <View style={{backgroundColor:'pink', flex:2}}></View>
