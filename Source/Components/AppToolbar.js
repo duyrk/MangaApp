@@ -54,6 +54,8 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-        backgroundColor:AppColors.primary_white
+        backgroundColor:AppColors.primary_white,
+        paddingTop:10,
+        paddingBottom:15
     }
 })

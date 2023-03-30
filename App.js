@@ -29,6 +29,8 @@ import { AppColors } from './Source/Constants/AppColors';
 import { Typographies } from './Source/Constants/Typographies';
 import{HomeScreen} from './Source/Pages/HomePages/Home';
 import BannerItem from './Source/Pages/HomePages/Items/BannerItem';
+import DetailInfoItem from './Source/Pages/HomePages/Items/DetailInfoItem';
+import Profile from './Source/Pages/HomePages/Profile';
 // import HomeScreen from './Source/Pages/HomePages/HomeScreen';
 import ChooseGenre from './Source/Pages/LoginPages/ChooseGenre';
 import SetupProfile from './Source/Pages/LoginPages/SetupProfile';
@@ -81,7 +83,9 @@ const App  = () => {
       {/* <ChooseGenre></ChooseGenre> */}
       {/* <SetupProfile></SetupProfile> */}
       {/* <HomeScreen></HomeScreen> */}
-      <AppToolbar></AppToolbar>
+      {/* <AppToolbar></AppToolbar> */}
+      <Profile></Profile>
+      {/* <DetailInfoItem></DetailInfoItem> */}
       {/* <BannerItem></BannerItem> */}
       {/* <View style={{flex:1}}>
         <View style={{backgroundColor:'red', flex:3}}></View>
