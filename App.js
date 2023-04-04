@@ -37,6 +37,9 @@ import SetupProfile from './Source/Pages/LoginPages/SetupProfile';
 //import GenreItem from './Source/Pages/LoginPages/Items/GenreItem';
 import SignIn from './Source/Pages/LoginPages/SignIn';
 import SignUp from './Source/Pages/LoginPages/SignUp';
+import DetailReader from './Source/Pages/HomePages/DetailReader';
+import Manga from './Source/Pages/HomePages/Manga';
+import Tab from './Source/Pages/AnimatedSlidingTab';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -84,9 +87,12 @@ const App  = () => {
       {/* <SetupProfile></SetupProfile> */}
       {/* <HomeScreen></HomeScreen> */}
       {/* <AppToolbar></AppToolbar> */}
-      <Profile></Profile>
+      {/* <Profile></Profile> */}
       {/* <DetailInfoItem></DetailInfoItem> */}
       {/* <BannerItem></BannerItem> */}
+      {/* <DetailReader></DetailReader> */}
+      <Manga></Manga>
+      {/* <Tab></Tab> */}
       {/* <View style={{flex:1}}>
         <View style={{backgroundColor:'red', flex:3}}></View>
         <View style={{backgroundColor:'pink', flex:2}}></View>
