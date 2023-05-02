@@ -10,7 +10,78 @@ import DetailInfoItem from './Items/DetailInfoItem'
 import AppButton from '../../Components/AppButton'
 import FavoriteButton from '../../Components/FavoriteButton'
 import Tab from '../AnimatedSlidingTab'
-
+const data=[
+    {
+        "_id":"1",
+        "title":"",
+        "thumbnail":"",
+        "date":""
+    },
+    {
+        "_id":"2",
+        "title":"",
+        "thumbnail":"",
+        "date":""
+    },
+    {
+        "_id":"3",
+        "title":"",
+        "thumbnail":"",
+        "date":""
+    },
+    {
+        "_id":"4",
+        "title":"",
+        "thumbnail":"",
+        "date":""
+    },
+    {
+        "_id":"5",
+        "title":"",
+        "thumbnail":"",
+        "date":""
+    },
+    {
+        "_id":"6",
+        "title":"",
+        "thumbnail":"",
+        "date":""
+    },
+    {
+        "_id":"7",
+        "title":"",
+        "thumbnail":"",
+        "date":""
+    },
+    {
+        "_id":"8",
+        "title":"",
+        "thumbnail":"",
+        "date":""
+    },
+    {
+        "_id":"9",
+        "title":"",
+        "thumbnail":"",
+        "date":""
+    }
+]
+const characterData=[
+    {
+        "_id":"1",
+        "name":"Chitoge Kirisaki",
+        "type":"Main Characters",
+        "image":"https://somoskudasai.com/wp-content/uploads/2021/06/portada_nisekoi-2.jpg",
+        "description":"She is the daughter of Adelt Wogner Kirisaki and Hana Kirisaki who served as the fake girlfriend of Raku Ichijō for the next three years of her school life to prevent a war from starting between their families."
+    },
+    {
+        "_id":"2",
+        "name":"Raku Ichijō",
+        "type":"Main Characters",
+        "image":"https://i.pinimg.com/originals/1e/59/60/1e596023f320e36af6466a7c1214c3e8.jpg",
+       "description": "Raku is a little taller than average for a high schooler and has messy, black hair. He has lightly tanned, fair skin, dark blue eyes and also has a big scar on the right side of his forehead."
+    }
+]
 const Manga = () => {
     const { width } = Dimensions.get('window').width;
     const [isActive, setisActive] = useState(false)
@@ -30,10 +101,14 @@ const Manga = () => {
     }
     return (
         <ScrollView style={styles.container}
-            stickyHeaderIndices={[0]}>
+            stickyHeaderIndices={[0]}
+            nestedScrollEnabled={true}
+            >
+            
             <View style={{
                 paddingStart: 33,
                 paddingEnd: 22,
+                backgroundColor: AppColors.primary_white
             }}>
                 <AppToolbar type='tools' title='Manga'></AppToolbar>
             </View>
@@ -71,7 +146,7 @@ const Manga = () => {
                 paddingStart: 33,
                 paddingEnd: 22,
             }}>
-                <Tab></Tab>
+                <Tab data={data} characterData={characterData}></Tab>
             </View>
            
         </ScrollView>

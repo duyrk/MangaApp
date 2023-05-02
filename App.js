@@ -40,6 +40,12 @@ import SignUp from './Source/Pages/LoginPages/SignUp';
 import DetailReader from './Source/Pages/HomePages/DetailReader';
 import Manga from './Source/Pages/HomePages/Manga';
 import Tab from './Source/Pages/AnimatedSlidingTab';
+import ChapterItem from './Source/Pages/HomePages/Items/ChapterItem';
+import CharacterItem from './Source/Pages/HomePages/Items/CharacterItem';
+import ReadManga from './Source/Pages/HomePages/ReadManga';
+import LibraryItem from './Source/Pages/HomePages/Items/LibraryItem';
+// import Library from './Source/Pages/HomePages/Library';
+import Libraryv1 from './Source/Pages/HomePages/Libraryv1';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
@@ -91,8 +97,14 @@ const App  = () => {
       {/* <DetailInfoItem></DetailInfoItem> */}
       {/* <BannerItem></BannerItem> */}
       {/* <DetailReader></DetailReader> */}
-      <Manga></Manga>
+      {/* <Manga></Manga> */}
+      {/* <ChapterItem></ChapterItem> */}
       {/* <Tab></Tab> */}
+      {/* <ReadManga></ReadManga> */}
+      {/* <LibraryItem></LibraryItem> */}
+      {/* <Library></Library> */}
+      <Libraryv1></Libraryv1>
+      {/* <CharacterItem></CharacterItem> */}
       {/* <View style={{flex:1}}>
         <View style={{backgroundColor:'red', flex:3}}></View>
         <View style={{backgroundColor:'pink', flex:2}}></View>

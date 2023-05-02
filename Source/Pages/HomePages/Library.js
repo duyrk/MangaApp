@@ -71,7 +71,7 @@ const mangaData = [
     }
 ]
 
-const Home = () => {
+const Library = () => {
 
 
 
@@ -111,69 +111,13 @@ const Home = () => {
                 </Pressable>
             </View>
             {/* Header End */}
-            {/* Search Bar Start */}
-            <View
-                style={{
-                    zIndex: 1,
-                    elevation: 1,
-                }}>
-                <DropShadow
-                    style={{
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 1,
-                        },
-                        shadowOpacity: 0.22,
-                        shadowRadius: 2.22,
-                        elevation: 3,
-                    }}
-                >
-                    <View style={styles.searchBarContainer}>
-                        <View style={styles.seachBarLeft}>
-                            <FastImage source={require('../../Images/ic_search.png')} style={{ width: 18, height: 19, marginEnd: 12 }} resizeMode={FastImage.resizeMode.contain}></FastImage>
-                            <TextInput style={{ flex: 1, paddingStart: 10 }} placeholder='Search Manga'></TextInput>
-                        </View>
-                        <Pressable style={styles.searchBarRight}>
-                            <FastImage source={require('../../Images/ic_configure.png')} style={{ width: 20, height: 10 }} resizeMode={FastImage.resizeMode.contain}></FastImage>
-                        </Pressable>
-                    </View>
-                </DropShadow>
-                {/* Search Bar End */}
-            </View>
-            <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingEnd: 15 }}>
-                <Text style={[Typographies.h4, { color: AppColors.primary_black }]}>Trending Manga</Text>
-                <Pressable>
-                    <FastImage source={require('../../Images/ic_3dots.png')} style={{ width: 20, height: 10 }} resizeMode={FastImage.resizeMode.contain}></FastImage>
-                </Pressable>
-            </View>
-            <Slider></Slider>
-
-            <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingEnd: 15 }}>
-                <Text style={[Typographies.h4, { color: AppColors.primary_black }]}>New Manga</Text>
-                <Pressable>
-                    <FastImage source={require('../../Images/ic_3dots.png')} style={{ width: 20, height: 10 }} resizeMode={FastImage.resizeMode.contain}></FastImage>
-                </Pressable>
-            </View>
-            <View style={{
-                marginTop: 18,
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
-                paddingHorizontal: 10
-            }}>
-                {
-                    mangaData.map(item => <DefaultItem data={item} key={item._id}></DefaultItem>)
-                }
-                {/* <DefaultItem></DefaultItem> */}
-            </View>
+          
 
         </ScrollView>
     )
 }
 
-export const HomeScreen = Home
+export default Library
 
 const styles = StyleSheet.create({
     container: {
@@ -199,8 +143,6 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         overflow: 'hidden',
     },
-    searchBarContainer: { backgroundColor: AppColors.primary_white, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',borderRadius: 25},
-    seachBarLeft: { flexDirection: 'row', flex: 1, alignItems: 'center', paddingStart: 20},
-    searchBarRight: { paddingEnd: 20, },
+   
 
 })

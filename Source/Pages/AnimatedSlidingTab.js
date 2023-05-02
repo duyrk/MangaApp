@@ -6,14 +6,58 @@ import {
     Animated,
     ScrollView,
     Image,
-    Dimensions
+    Dimensions,
+    Pressable,
+    FlatList
 } from "react-native";
 import { AppColors } from "../Constants/AppColors";
 import DropShadow from "react-native-drop-shadow";
-
+import FastImage from "react-native-fast-image";
+import {Typographies} from "../../Source/Constants/Typographies"
+import AppButton from "../Components/AppButton";
+import ChapterItem from "./HomePages/Items/ChapterItem";
+import CharacterItem from "./HomePages/Items/CharacterItem";
 const { width } = Dimensions.get("window");
-
+// const data =[
+//     {
+//         "_id":"1",
+//         "title":"",
+//         "thumbnail":"",
+//         "date":""
+//     },
+//     {
+//         "_id":"1",
+//         "title":"",
+//         "thumbnail":"",
+//         "date":""
+//     },
+//     {
+//         "_id":"1",
+//         "title":"",
+//         "thumbnail":"",
+//         "date":""
+//     },
+//     {
+//         "_id":"1",
+//         "title":"",
+//         "thumbnail":"",
+//         "date":""
+//     },
+//     {
+//         "_id":"1",
+//         "title":"",
+//         "thumbnail":"",
+//         "date":""
+//     },
+//     {
+//         "_id":"1",
+//         "title":"",
+//         "thumbnail":"",
+//         "date":""
+//     }
+// ]
 export default class Tab extends React.Component {
+    
     state = {
         active: 0,
         xTabOne: 0,
@@ -68,6 +112,8 @@ export default class Tab extends React.Component {
     };
 
     render() {
+    
+        //  const {data} = this.props.data;
         let {
             xTabOne,
             xTabTwo,
@@ -78,6 +124,7 @@ export default class Tab extends React.Component {
             translateY
         } = this.state;
         return (
+            
             <View style={{ flex: 1, }}>
                 <View
                     style={{
@@ -154,7 +201,7 @@ export default class Tab extends React.Component {
                                     Manga
                                 </Text>
                             </TouchableOpacity>
-                       
+                            {/* 168.72727966308594 */}
                         <TouchableOpacity
                             style={{
                                 flex: 1,
@@ -186,13 +233,17 @@ export default class Tab extends React.Component {
                                 Characters
                             </Text>
                         </TouchableOpacity>
+                        
                     </View>
 
-                    <ScrollView >
+                    <ScrollView nestedScrollEnabled={true}
+                   
+                    >
                         <Animated.View
                             style={{
-                                justifyContent: "center",
-                                alignItems: "center",
+                               
+                           
+                          
                                 transform: [
                                     {
                                         translateX: translateXTabOne
@@ -205,23 +256,94 @@ export default class Tab extends React.Component {
                                 })
                             }
                         >
-                            <Text>Hi, I am a cute cat</Text>
-                            <View style={{ marginTop: 20 }}>
-                                {/* <Image
-                                    source={require("./cat.jpg")}
-                                    style={{
-                                        width: 30,
-                                        height: 30,
-                                        borderRadius: 15
-                                    }}
-                                /> */}
+                            <View style={{borderWidth:1, 
+                                borderColor: AppColors.secondary_gray, 
+                                width:'100%',
+                                alignItems:'center',
+                                padding:10,
+                                borderRadius:15
+                                }}>
+
+                          
+                            <View style={{flexDirection:'row'}}>
+                                <View style={{flexDirection:'row'}}>
+                                    <FastImage source={require('../Images/ic_user.png')}
+                                    
+                                    style={{width:20, height:20}}
+                                    resizeMode={FastImage.resizeMode.contain}
+                                    tintColor={AppColors.secondary_gray}
+                                    ></FastImage>
+                                <Text style={[Typographies.h4,{marginStart:10, color:AppColors.secondary_gray}]}>Author:</Text>
+                                </View>
+                                <Text style={[Typographies.h4,{marginStart:10, color:AppColors.primary, fontWeight:'800'}]}>Tomohito Oda</Text>
+
+                            </View>
+                            <View style={{flexDirection:'row', marginTop:17}}>
+                                <View style={{flexDirection:'row'}}>
+                                    <FastImage source={require('../Images/ic_status.png')}
+                                    
+                                    style={{width:20, height:20}}
+                                    resizeMode={FastImage.resizeMode.contain}
+                                    tintColor={AppColors.secondary_gray}
+                                    ></FastImage>
+                                <Text style={[Typographies.h4,{marginStart:10, color:AppColors.secondary_gray}]}>Status:</Text>
+                                </View>
+                                <Text style={[Typographies.h4,{marginStart:10, color:AppColors.primary, fontWeight:'800'}]}>On Going</Text>
+
+                            </View>
+                            <View style={{flexDirection:'row', marginTop:17}}>
+                                <View style={{flexDirection:'row'}}>
+                                    <FastImage source={require('../Images/ic_category.png')}
+                                    
+                                    style={{width:20, height:20}}
+                                    resizeMode={FastImage.resizeMode.contain}
+                                    tintColor={AppColors.secondary_gray}
+                                    ></FastImage>
+                                <Text style={[Typographies.h4,{marginStart:10, color:AppColors.secondary_gray}]}>Genres:</Text>
+                                </View>
+                                <Text style={[Typographies.h4,{marginStart:10, color:AppColors.primary, fontWeight:'800'}]}>Tomohito Oda</Text>
+
+                            </View>
+                            <View style={{flexDirection:'row', marginTop:17}}>
+                                <View style={{flexDirection:'row'}}>
+                                    <FastImage source={require('../Images/ic_eye2.png')}
+                                    
+                                    style={{width:20, height:20}}
+                                    resizeMode={FastImage.resizeMode.contain}
+                                    tintColor={AppColors.secondary_gray}
+                                    ></FastImage>
+                                <Text style={[Typographies.h4,{marginStart:10, color:AppColors.secondary_gray}]}>Views:</Text>
+                                </View>
+                                <Text style={[Typographies.h4,{marginStart:10, color:AppColors.primary, fontWeight:'800'}]}>34.642.436</Text>
+
+                            </View>
+                          
+                            </View>
+                            <View style={{marginTop:20, flexDirection:'row', justifyContent:'space-around', paddingHorizontal:20,flex:1}}>
+                                <Pressable android_ripple={{color: AppColors.primary}} style={{flex:1, alignItems:'center', borderWidth:1, borderColor:AppColors.primary,padding:10, borderBottomStartRadius:10, borderTopStartRadius:10}}><Text style={[Typographies.h4,{color: AppColors.primary}]}>Read First</Text></Pressable>
+                                <Pressable android_ripple={{color: AppColors.primary}} style={{flex:1,alignItems:'center', borderWidth:1, borderColor:AppColors.primary,padding:10,borderBottomEndRadius:10,borderTopEndRadius:10}}><Text style={[Typographies.h4,{color: AppColors.primary}]}>Read Last</Text></Pressable>
+                            </View>
+                            <View style={{marginTop:20}}>
+                                <Text style={[Typographies.h3,{color: AppColors.primary_black, fontWeight:'700'}]}>Description</Text>
+                                <Text style={{lineHeight:20}}>Nisekoi kể về chuyện tình tay ba xoay quanh Ichijō Raku, Kirisaki Chitoge và Onodera Kosaki. Raku là con trai của ông trùm băng đảng yakuza tên Shuei-gumi và cậu đang thầm thích bạn học cùng lớp Kosaki. Cho đến khi có một cuộc hẹn hò giả tạo với cô gái Chitoge điều gì sẽ xảy ra tiếp theo...?</Text>
+                            </View>
+                            <View style={{marginTop:20}}>
+                                <Text style={[Typographies.h3, {color: AppColors.primary_black, fontWeight:'700'}]}>Chapters</Text>
+                              <ScrollView style={{height:500, marginTop:10}}
+                              nestedScrollEnabled={true}
+                              showsVerticalScrollIndicator={false}
+                              >
+                               {
+                                this.props.data.map(item=><ChapterItem key={item._id}></ChapterItem>)
+                               }
+                              </ScrollView>
                             </View>
                         </Animated.View>
-
+                             
                         <Animated.View
                             style={{
-                                justifyContent: "center",
-                                alignItems: "center",
+                    
+                             
                                 transform: [
                                     {
                                         translateX: translateXTabTwo
@@ -232,17 +354,12 @@ export default class Tab extends React.Component {
                                 ]
                             }}
                         >
-                            <Text>Hi, I am a cute dog</Text>
-                            <View style={{ marginTop: 20 }}>
-                                {/* <Image
-                                    source={require("./dog.jpg")}
-                                    style={{
-                                        width: 30,
-                                        height: 30,
-                                        borderRadius: 15
-                                    }}
-                                /> */}
+                            <View>
+                            {
+                                this.props.characterData.map(item =><CharacterItem data={item} key={item._id}></CharacterItem>)
+                            }
                             </View>
+                           
                         </Animated.View>
                     </ScrollView>
                 </View>
